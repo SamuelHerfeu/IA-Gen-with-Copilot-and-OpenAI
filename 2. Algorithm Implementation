@@ -1,0 +1,43 @@
+Prompt: "Implement MergeSort algorithm in Java with explanatory comments"  
+
+public class MergeSort {
+
+    public void sort(int[] array) {
+        if (array == null || array.length <= 1) {
+            return;
+        }
+        int[] temp = new int[array.length];
+        mergeSort(array, temp, 0, array.length - 1);
+    }
+
+    private void mergeSort(int[] array, int[] temp, int left, int right) {
+        if (left < right) {
+            int mid = left + (right - left) / 2;
+            mergeSort(array, temp, left, mid);      // Sort left half
+            mergeSort(array, temp, mid + 1, right); // Sort right half
+            merge(array, temp, left, mid, right);   // Merge halves
+        }
+    }
+
+    private void merge(int[] array, int[] temp, int left, int mid, int right) {
+        // Copy to temp array
+        System.arraycopy(array, left, temp, left, right - left + 1);
+        
+        int i = left;       // Left half index
+        int j = mid + 1;    // Right half index
+        int k = left;       // Merged array index
+
+        while (i <= mid && j <= right) {
+            if (temp[i] <= temp[j]) {
+                array[k++] = temp[i++];
+            } else {
+                array[k++] = temp[j++];
+            }
+        }
+
+        // Copy remaining left half elements
+        while (i <= mid) {
+            array[k++] = temp[i++];
+        }
+    }
+}
