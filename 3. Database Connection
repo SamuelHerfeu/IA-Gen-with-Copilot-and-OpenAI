@@ -1,0 +1,23 @@
+Prompt: "Create a Java class for JDBC MySQL connection using try-with-resources"
+
+import java.sql.*;
+
+public class DatabaseConnector {
+    private static final String URL = "jdbc:mysql://localhost:3306/mydatabase";
+    private static final String USER = "username";
+    private static final String PASSWORD = "password";
+
+    public void executeQuery(String sql) {
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            
+            while (rs.next()) {
+                // Process results
+                System.out.println(rs.getString("column_name"));
+            }
+        } catch (SQLException e) {
+            System.err.println("Connection error: " + e.getMessage());
+        }
+    }
+}
