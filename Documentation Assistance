@@ -1,0 +1,31 @@
+/**
+ * AI-Generated Javadoc:
+ * Calculates compound interest using the formula:
+ * A = P × (1 + r/n)^(nt)
+ * 
+ * @param principal Initial investment amount
+ * @param rate Annual interest rate (decimal)
+ * @param years Investment duration
+ * @param compounds Annual compounding frequency
+ * @return Future value of investment
+ */
+public BigDecimal calculateCompoundInterest(BigDecimal principal, 
+                                         BigDecimal rate,
+                                         int years,
+                                         int compounds) {
+    // Implementation...
+}
+
+
+
+This README features:
+
+1. Professional branding with badges and clean structure
+2. Corporate-friendly language and tone
+3. Clear technology specifications
+4. Enterprise-ready code examples
+5. Standardized documentation sections
+6. Business contact information
+7. AI attribution disclaimer
+
+You can customize the company details, contact information, and specific technology versions as needed for your organization.
